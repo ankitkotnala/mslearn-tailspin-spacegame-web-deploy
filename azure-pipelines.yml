@@ -8,7 +8,7 @@ stages:
   - job: 'Build'
     displayName: 'Build job'
     pool:
-      name: "testpool"
+      vmImage: 'Ubuntu-16.04'
       demands:
         - npm
 
@@ -166,7 +166,7 @@ stages:
   jobs:
   - deployment: Deploy
     pool:
-      name: "testpool"
+      vmImage: 'Ubuntu-16.04'
     environment: dev
     variables:
     - group: Release
@@ -189,7 +189,7 @@ stages:
   jobs:
   - deployment: Deploy
     pool:
-      name: "testpool"
+      vmImage: 'Ubuntu-16.04'
     environment: test
     variables:
     - group: 'Release'
@@ -212,7 +212,7 @@ stages:
   jobs:
   - deployment: Deploy
     pool:
-      name: "testpool"
+      vmImage: 'Ubuntu-16.04'
     environment: staging
     variables:
     - group: 'Release'
